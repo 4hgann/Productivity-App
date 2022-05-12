@@ -1,39 +1,41 @@
 import './App.css';
+import { useState } from 'react';
 import AnalogClock from 'analog-clock-react';
-import { useState, useEffect } from 'react';
 
 function App() {
 
-  let options = {
-    width: "300px",
+  const [hour,setHour] = useState(0)
+  const [minute, setMinute] = useState(0)
+  const [options, setOptions] = useState({
+    width: "15vw",
     border: true,
     borderColor: "#2e2e2e",
     baseColor: "#17a2b8",
     centerColor: "#459cff",
     centerBorderColor: "#ffffff",
     handColors: {
-      second: "#d81c7a",
-      minute: "#ffffff",
-      hour: "#ffffff"
+      second: "#ff0000",
+      minute: "#000000",
+      hour: "#000000"
     }
-  };
+  })
 
   const updateClock = () => {
-    let ausTime = new Date().toLocaleString("en-US", { timeZone: "Australia/Brisbane" });
+    let ausTime = new Date().toLocaleString("en-NZ");
     let date = new Date(ausTime);
+    setMinute(date.getMinutes())
+    setHour(date.getHours())
 
-    this.setState({
-      'options': {
-        ...this.state.options,
-        seconds: date.getSeconds(),
-        minutes: date.getMinutes(),
-        hours: date.getHours()
-      }
-    })
+
+  setOptions({
+    ...options,
+    seconds: date.getSeconds(),
+    minutes: minute,
+    hours: hour,
+  })
   }
 
   setInterval(updateClock, 1000);
-
 
   return (
     <div className="main">
@@ -42,7 +44,8 @@ function App() {
         Todo
       </div>
       <div className="col card">
-        <AnalogClock {...options} />
+        <AnalogClock {...options}/>
+        <p>{hour}:{minute}</p>
       </div>
     </div>
     <div className="row">
