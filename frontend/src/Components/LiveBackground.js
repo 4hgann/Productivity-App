@@ -4,7 +4,6 @@ function LiveBackground () {
     return(
         <video className='video-background' src={Moon} autoPlay muted loop/>
     );
-
 }
 
 export default LiveBackground;

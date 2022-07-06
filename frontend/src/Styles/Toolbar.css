@@ -1,0 +1,18 @@
+.toolbar-item{
+    height:50px;
+    width:50px;
+    border-radius: 0;
+    border:0;
+}
+
+.toolbar-item:hover{
+    cursor: pointer;
+}
+
+.first-item{
+    border-radius: 10px 0 0 10px;
+}
+
+.last-item{
+    border-radius: 0 10px 10px 0;
+}
