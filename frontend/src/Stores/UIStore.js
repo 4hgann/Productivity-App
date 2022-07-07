@@ -11,10 +11,13 @@ export default class UIStore{
         this.showClock = false;
     }
 
-    toggleTodos = () => {
-        this.showTodos= !this.showTodos;
-        console.log(this.showTodos)
+    toggle = (type) => {
+        if(type == 'todo'){
+            console.log('ping')
+            this.showTodos = !this.showTodos;
+        }
+        else if(type == 'arbitrary'){
+
+        }
     }
-
 }
-
