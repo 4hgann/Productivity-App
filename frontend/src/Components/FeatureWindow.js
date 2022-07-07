@@ -1,13 +1,17 @@
 import '../Styles/FeatureWindow.css'
 import { IoIosClose } from 'react-icons/io'
+import { UIContext } from '../Contexts/UIContext'
+import { useContext } from 'react'
 
 // Child is the component to be rendered inside the window
 // Name is the name to be passed for toggling state
-const FeatureWindow = ( {child, name, store} ) => {
+const FeatureWindow = ( { child, name } ) => {
+    const { toggle, getDisplayValue } = useContext(UIContext)
+    const showWindow = getDisplayValue(name)
     return(
-        <div className="window">
+        <div className="window" style={{display: showWindow ? 'flex' : 'none'}}>
             <div className = "window-top">
-                <button className = "exit-button" onClick = { () => store.toggle(name) }><IoIosClose/></button>
+                <button className = "exit-button" onClick = { () => toggle(name) }><IoIosClose/></button>
             </div>
             <div className='window-content'>
                 {child}
