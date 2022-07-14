@@ -2,8 +2,6 @@
     width:15%;
     height:30%;
     border-radius: 5px;
-    background-color: white;
-
     flex-direction: column;
 }
 
@@ -17,4 +15,13 @@
 
 .exit-button:hover{
     cursor: pointer;
+}
+
+.window-top{
+    background-color: white;
+    border-radius: 5px 5px 0 0;
+}
+
+.window-content{
+    background-color:white;
 }

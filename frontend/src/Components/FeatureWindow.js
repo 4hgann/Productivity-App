@@ -5,7 +5,7 @@ import { useContext } from 'react'
 
 // Child is the component to be rendered inside the window
 // Name is the name to be passed for toggling state
-const FeatureWindow = ( { child, name } ) => {
+const FeatureWindow = ( { children, name } ) => {
     const { toggle, getDisplayValue } = useContext(UIContext)
     const showWindow = getDisplayValue(name)
     return(
@@ -14,7 +14,7 @@ const FeatureWindow = ( { child, name } ) => {
                 <button className = "exit-button" onClick = { () => toggle(name) }><IoIosClose/></button>
             </div>
             <div className='window-content'>
-                {child}
+                {children}
             </div>
         </div>
     )

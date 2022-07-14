@@ -4,12 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { UIContextProvider } from './Contexts/UIContext';
+import { TodoContextProvider } from './Contexts/TodoContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <UIContextProvider>
-      <App />
+      <TodoContextProvider>
+        <App />
+      </TodoContextProvider>
     </UIContextProvider>
   </React.StrictMode>
 );

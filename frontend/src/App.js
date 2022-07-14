@@ -1,6 +1,7 @@
 import LiveBackground from './Components/LiveBackground';
 import Toolbar from './Components/Toolbar';
 import FeatureWindow from './Components/FeatureWindow';
+import TodoList from './Components/Todos/TodoList'
 
 function App() {
 
@@ -9,7 +10,9 @@ function App() {
       <LiveBackground/>
       <div className="content">
         <Toolbar/>
-        <FeatureWindow child={<p>Hello World</p>} name='todo'/>
+        <FeatureWindow name='todo'> 
+          <TodoList/> 
+        </FeatureWindow>
       </div>
     </div>
 
