@@ -1,0 +1,11 @@
+.todo-item{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    background-color:grey;
+    border: 1px solid black;
+    margin: 10px auto;
+}
+
+.complete-button, .remove-button{
+}
