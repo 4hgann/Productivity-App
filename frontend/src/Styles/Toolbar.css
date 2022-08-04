@@ -16,3 +16,12 @@
 .last-item{
     border-radius: 0 10px 10px 0;
 }
+
+.custom-button {
+    width: 50px;
+    height: 50px;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    color:white;
+}

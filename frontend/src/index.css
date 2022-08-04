@@ -30,3 +30,12 @@ video{
     top: 85%;
     justify-content: center;
 }
+
+.button {
+    background: transparent;
+    border: none;
+}
+
+.button:hover{
+    cursor: pointer;
+}

@@ -1,0 +1,16 @@
+.datepicker{
+    width:100%;
+}
+
+.addTodoModal{
+    display:flex;
+    flex-direction: column;
+}
+
+.modal-item{
+    margin:10px 0;
+}
+
+.modal-heading{
+    font-size:14pt;
+}
