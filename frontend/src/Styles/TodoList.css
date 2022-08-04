@@ -1,0 +1,14 @@
+.todo-container{
+    display:flex;
+    flex-direction: column;
+    height:100%;
+}
+
+.bottom{
+    margin-top: auto;
+    border-radius: 0 0 5px 5px;
+}
+
+.add-button{
+    border-radius: 5px;
+}
