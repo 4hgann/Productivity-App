@@ -10,7 +10,7 @@ export function TodoContextProvider({ children }){
 
     // Input validation and add the todo to array if valid else log 'error'
     const addTodo = (todo) => {
-
+      console.log('attempting to add todo: ', todo)
     }
 
     // Given an index, remove that todo from todos

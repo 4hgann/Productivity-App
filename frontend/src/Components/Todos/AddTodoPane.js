@@ -1,6 +1,7 @@
 import { useContext, useState } from "react"
 import { todoContext } from "../../Contexts/TodoContext"
-import { DatePicker, Modal, Button, Input, Typography } from "antd";
+import { DatePicker, Modal, Button, Input, Typography, message } from "antd";
+import moment  from 'moment'
 import '../../Styles/AddTodoPane.css'
 
 function AddTodoPane() {
@@ -17,12 +18,27 @@ function AddTodoPane() {
     const { Text } = Typography;
 
     const onChange = (date, dateString) => {
-        setDisplayDate(date)
+        setDisplayDate(moment(new Date(date._d), dateFormat))
+        setDate(date._d.getTime())
+
+        console.log(dateString)
+        console.log(date._d.getTime())
     }
 
     const verifyTodo = () => {
-        console.log(todoName)
-        toggleShowModal(false);
+        if(todoName === null || date === null ){
+            message.error('You need both a name and a date for your todo item')
+        }
+        else{
+            const newTodo = {
+                name: todoName,
+                due: date,
+                isCompleted: false
+            }
+            addTodo(newTodo)
+            message.success('Todo has been added')
+            cancelTodo();
+        }
     }
 
     const cancelTodo = () => {
@@ -42,7 +58,7 @@ function AddTodoPane() {
                 <Input className="modal-item" placeholder ="New todo..." value={todoName} onChange={(e)=> setTodoName(e.target.value)}/>
 
                 <Text className="modal-heading">Due Date </Text>
-                <DatePicker className = "datepicker modal-item" onChange={onChange} allowClear format={dateFormat} value={displayDate}/>
+                <DatePicker className = "datepicker modal-item" onChange={onChange} format={dateFormat} value={displayDate}/>
             </Modal>
         </div>
     )
