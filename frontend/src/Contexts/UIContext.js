@@ -9,14 +9,20 @@ export function UIContextProvider({ children }){
 
   const toggle = (name) => {
     if(name === 'todo'){
-      console.log('toggle todo')
       toggleTodos(!showTodos);
+    }
+    else if(name =='clock'){
+      console.log('check')
+      toggleClock(!showClock);
     }
   }
 
   const getDisplayValue = (name) => {
     if(name === 'todo'){
       return showTodos;
+    }
+    else if(name === 'clock'){
+      return showClock;
     }
   }
 
