@@ -14,3 +14,7 @@
 .modal-heading{
     font-size:14pt;
 }
+
+.add-button{
+    border-radius: 0 0 5px 5px;
+}
