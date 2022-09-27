@@ -17,6 +17,11 @@
     border-radius: 0 0 5px;
 }
 
+.timer{
+    text-align: center;
+}
+
 .ant-btn {
+    display: flex;
     border-radius: 5px;
 }

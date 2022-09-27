@@ -2,6 +2,7 @@ import { Button, message } from 'antd';
 import { useState } from 'react'
 import '../../Styles/Timer.css'
 import 'antd/lib/button/style/index.css'
+import SetTimePane from './SetTimePane';
 
 const Timer = () => {
 
@@ -39,7 +40,7 @@ const Timer = () => {
     }
 
     return(
-        <div>
+        <div className='timer'>
             <p>{`
                 ${hrs.toString().padStart(2, '0')}:
                 ${mins.toString().padStart(2, '0')}:
@@ -51,7 +52,7 @@ const Timer = () => {
                 <Button className='timerButton' onClick={stop}>Pause</Button>
             </div>
             <div className="bottom">
-                <Button type="primary" block className='form-button'>Set Time</Button>
+                <SetTimePane/>
             </div>
         </div>
     )
