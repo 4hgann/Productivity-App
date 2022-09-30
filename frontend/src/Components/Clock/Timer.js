@@ -40,8 +40,6 @@ const Timer = () => {
             setTime([hours, minutes - 1, 59])
         }
         else{
-            console.log('ping')
-            console.log("check ", [hours, minutes, seconds - 1])
             setTime([hours, minutes, seconds - 1])
         }
     }
@@ -49,7 +47,7 @@ const Timer = () => {
     const start = () => {
         if(interval === null){
             message.success('Timer is now starting')
-            setTimer(!startTimer)
+            setTimer(true)
         }
         else{
         }
@@ -57,7 +55,8 @@ const Timer = () => {
 
     const stop = () => {
         if(interval !== null){
-            clearInterval(interval)
+            message.success('Timer is now pausing')
+            setTimer(false)
         }
     }
 
