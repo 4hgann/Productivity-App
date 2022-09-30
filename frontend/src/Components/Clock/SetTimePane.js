@@ -5,25 +5,20 @@ import '../../Styles/TimePane.css'
 
 function SetTimePane() {
 
-    const [secs, secsListener] = useState(null);
-    const [mins, minsListener] = useState(null);
-    const [hrs, hrsListener] = useState(null);
-    const [showModal, toggleShowModal] = useState(false);
-    const { Text } = Typography;
+    const [secs, secsListener] = useState(1);
+    const [mins, minsListener] = useState(0);
+    const [hrs, hrsListener] = useState(0);
     const { setSecs, setMins, setHrs } = useContext(TimeContext);
 
-    const passTime = () => {
-        if(secs !== null && mins !== null && hrs !== null){
-            setSecs(secs);
-            setMins(mins);
-            setHrs(hrs);
-            message.success("The time has sucessfully been set!");
-            toggleShowModal(!showModal);
-        }
-        else{
-            message.error("You must enter a time in each field");
-        }
+    const [showModal, toggleShowModal] = useState(false);
+    const { Text } = Typography;
 
+    const passTime = () => {
+        setSecs(secs);
+        setMins(mins);
+        setHrs(hrs);
+        message.success("The time has sucessfully been set!");
+        toggleShowModal(!showModal);
     }
 
 
