@@ -25,7 +25,7 @@ function SetTimePane() {
     return(
         <div>
             <Button className = "add-button" type="primary" block onClick={() => toggleShowModal(!showModal)}>
-                 Add new Todo
+                 Set Time
             </Button>
 
             <Modal title="Add new todo" visible={showModal}  className="countdown-modal" onOk={passTime} onCancel={() => toggleShowModal(!showModal)}>

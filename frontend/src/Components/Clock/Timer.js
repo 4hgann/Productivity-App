@@ -31,7 +31,7 @@ const Timer = () => {
         console.log([hours,minutes,seconds])
         if(hours === 0 && minutes === 0 && seconds === 0){
             message.success('Time is up!')
-            stop();
+            clearInterval(interval)
         }
         else if (minutes === 0 && seconds === 0){
             setTime([hours - 1, 59, 59])
