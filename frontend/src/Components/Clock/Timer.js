@@ -14,23 +14,19 @@ const Timer = () => {
         setTime([hrs, mins, secs])
     }
 
-    // This handles updating state when using intervals which normally resets state after completion. We are utilising
-    // this will create multiple interval IDs which are tracked in the intervalID array to ensure all are cleaned up with
-    // clearInterval later
+    // Call the tick function every second or clear it if it is finished counting down.
     useEffect(() => {
+        let interval;
         if(startTimer){
-            const id = setInterval(tick, 1000);
-            intervalID.push(id)
+            interval = setInterval( () => tick(), 1000);
         }
-        else{
-            for(let i = 0; i < intervalID.length; i++){
-                clearInterval(intervalID[i])
-            }
-            setIntervalID([])
+        else if (!startTimer) {
+            clearInterval(interval)
         }
+        return () => clearInterval(interval);
     }, [startTimer, hours, minutes, seconds])
 
-    // Handles the logic for changing time. Toggles the timer value to clean up the intervals in above useEffect
+    // Handles the logic for changing time. Gets called every second to 'tick' down the timer
     const tick = () => {
         if(hours === 0 && minutes === 0 && seconds === 0){
             message.success('Time is up!')
