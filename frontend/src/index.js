@@ -5,16 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { UIContextProvider } from './Contexts/UIContext';
 import { TodoContextProvider } from './Contexts/TodoContext';
-import { TimeContextProvider } from './Contexts/TimeContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <UIContextProvider>
       <TodoContextProvider>
-        <TimeContextProvider>
           <App />
-        </TimeContextProvider>
       </TodoContextProvider>
     </UIContextProvider>
   </React.StrictMode>

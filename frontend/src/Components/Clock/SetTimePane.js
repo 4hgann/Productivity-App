@@ -1,6 +1,5 @@
 import { useContext, useState } from "react"
 import { Modal, Button, Typography, message, InputNumber } from "antd";
-import { TimeContext } from "../../Contexts/TimeContext";
 import '../../Styles/TimePane.css'
 
 function SetTimePane({callbackHandler}) {
@@ -8,7 +7,6 @@ function SetTimePane({callbackHandler}) {
     const [secs, secsListener] = useState(1);
     const [mins, minsListener] = useState(0);
     const [hrs, hrsListener] = useState(0);
-    // const { setSecs, setMins, setHrs, counter, setCounter } = useContext(TimeContext);
 
     const [showModal, toggleShowModal] = useState(false);
     const { Text } = Typography;

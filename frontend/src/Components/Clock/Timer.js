@@ -3,7 +3,6 @@ import { useContext, useEffect, useState } from 'react'
 import '../../Styles/Timer.css'
 import 'antd/lib/button/style/index.css'
 import SetTimePane from './SetTimePane';
-import { TimeContext } from '../../Contexts/TimeContext';
 
 const Timer = () => {
     const [[hours, minutes, seconds], setTime] = useState([0,0,0]);
