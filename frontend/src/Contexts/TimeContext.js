@@ -7,9 +7,10 @@ export function TimeContextProvider({ children }){
     const [secs, setSecs] = useState(0);
     const [mins, setMins] = useState(0);
     const [hrs, setHrs] = useState(0);
+    const [counter, setCounter] = useState(0)
 
     const context = {
-        secs, mins, hrs, setSecs, setMins, setHrs
+        secs, mins, hrs, counter, setSecs, setMins, setHrs, setCounter
     }
 
   return (

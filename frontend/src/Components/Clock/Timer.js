@@ -6,32 +6,36 @@ import SetTimePane from './SetTimePane';
 import { TimeContext } from '../../Contexts/TimeContext';
 
 const Timer = () => {
-
-    const { secs, hrs, mins } = useContext(TimeContext)
-    const [[hours, minutes, seconds], setTime] = useState([hrs,mins,secs]);
+    const [[hours, minutes, seconds], setTime] = useState([0,0,0]);
     const [startTimer, setTimer] = useState(false)
+    const [intervalID, setIntervalID] = useState([])
 
-    useEffect(() => {
+    // For receiving input from SetTimePane
+    const handleTimeInput = ([hrs, mins, secs]) => {
         setTime([hrs, mins, secs])
-    }, [hrs, mins, secs])
+    }
 
+    // This handles updating state when using intervals which normally resets state after completion. We are utilising
+    // this will create multiple interval IDs which are tracked in the intervalID array to ensure all are cleaned up with
+    // clearInterval later
     useEffect(() => {
         if(startTimer){
-            interval = setInterval(tick, 1000);
+            const id = setInterval(tick, 1000);
+            intervalID.push(id)
         }
         else{
-            clearInterval(interval);
+            for(let i = 0; i < intervalID.length; i++){
+                clearInterval(intervalID[i])
+            }
+            setIntervalID([])
         }
     }, [startTimer, hours, minutes, seconds])
 
-
-    let interval = null;
-
+    // Handles the logic for changing time. Toggles the timer value to clean up the intervals in above useEffect
     const tick = () => {
-        console.log([hours,minutes,seconds])
         if(hours === 0 && minutes === 0 && seconds === 0){
             message.success('Time is up!')
-            clearInterval(interval)
+            setTimer(false)
         }
         else if (minutes === 0 && seconds === 0){
             setTime([hours - 1, 59, 59])
@@ -45,19 +49,18 @@ const Timer = () => {
     }
 
     const start = () => {
-        if(interval === null){
-            message.success('Timer is now starting')
-            setTimer(true)
+        if(hours === 0 && minutes === 0 && seconds === 0){
+            message.error('You need to select a time')
         }
         else{
+            message.success('Timer is now starting')
+            setTimer(true)
         }
     }
 
     const stop = () => {
-        if(interval !== null){
             message.success('Timer is now pausing')
             setTimer(false)
-        }
     }
 
     return(
@@ -73,7 +76,7 @@ const Timer = () => {
                 <Button className='timerButton' onClick={stop}>Pause</Button>
             </div>
             <div className="bottom">
-                <SetTimePane/>
+                <SetTimePane callbackHandler={handleTimeInput}/>
             </div>
         </div>
     )

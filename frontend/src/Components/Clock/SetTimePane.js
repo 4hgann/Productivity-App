@@ -3,20 +3,18 @@ import { Modal, Button, Typography, message, InputNumber } from "antd";
 import { TimeContext } from "../../Contexts/TimeContext";
 import '../../Styles/TimePane.css'
 
-function SetTimePane() {
+function SetTimePane({callbackHandler}) {
 
     const [secs, secsListener] = useState(1);
     const [mins, minsListener] = useState(0);
     const [hrs, hrsListener] = useState(0);
-    const { setSecs, setMins, setHrs } = useContext(TimeContext);
+    // const { setSecs, setMins, setHrs, counter, setCounter } = useContext(TimeContext);
 
     const [showModal, toggleShowModal] = useState(false);
     const { Text } = Typography;
 
     const passTime = () => {
-        setSecs(secs);
-        setMins(mins);
-        setHrs(hrs);
+        callbackHandler([hrs,mins,secs])
         message.success("The time has sucessfully been set!");
         toggleShowModal(!showModal);
     }
