@@ -4,6 +4,7 @@ import FeatureWindow from './Components/FeatureWindow';
 import TodoList from './Components/Todos/TodoList'
 import ClockHome from './Components/Clock/ClockHome';
 import "antd/dist/antd.css";
+import WeatherWidget from './Components/Weather/WeatherWidget';
 
 function App() {
 
@@ -18,6 +19,10 @@ function App() {
         <FeatureWindow name='clock'>
           <ClockHome/>
         </FeatureWindow>
+        <FeatureWindow name='weather'>
+          <WeatherWidget/>
+        </FeatureWindow>
+
       </div>
     </div>
 
