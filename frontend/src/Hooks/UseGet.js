@@ -13,9 +13,11 @@ const UseGet = ((url, initialValue) => {
 
             fetch(url).then((res) =>  {
                 if(res.ok){
-                    res.json()
+                    console.log('all good')
+                    return res.json()
                 }
                 else{
+                    console.log('error')
                     throw new Error('There was a problem fetching that data')
                 }
             })
