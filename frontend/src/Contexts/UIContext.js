@@ -12,7 +12,6 @@ export function UIContextProvider({ children }){
       toggleTodos(!showTodos);
     }
     else if(name =='clock'){
-      console.log('check')
       toggleClock(!showClock);
     }
   }

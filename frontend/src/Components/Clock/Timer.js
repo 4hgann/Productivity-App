@@ -1,5 +1,5 @@
 import { Button, message } from 'antd';
-import { useContext, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import '../../Styles/Timer.css'
 import 'antd/lib/button/style/index.css'
 import SetTimePane from './SetTimePane';
@@ -46,7 +46,6 @@ const Timer = () => {
         if(hours === 0 && minutes === 0 && seconds === 0){
             message.error('You need to select a time')
         }
-
         else{
             setRunning(!isRunning)
             if(!isRunning){
@@ -56,7 +55,6 @@ const Timer = () => {
                 message.warn('Pausing timer')
             }
         }
-
     }
 
     return(

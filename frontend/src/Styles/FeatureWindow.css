@@ -1,9 +1,10 @@
 .window{
     height:35%;
     min-height:200px;
-    aspect-ratio: 9/16;
+    aspect-ratio: 4/5;
     border-radius: 5px;
     flex-direction: column;
+    position:absolute;
 }
 
 .exit-button{

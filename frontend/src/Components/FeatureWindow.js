@@ -11,14 +11,14 @@ const FeatureWindow = ( { children, name } ) => {
     const showWindow = getDisplayValue(name)
     return(
         <Draggable>
-        <div className="window" style={{display: showWindow ? 'flex' : 'none'}}>
-            <div className = "window-top">
-                <button className = "custom-button exit-button" onClick = { () => toggle(name) }><IoIosClose className="button-icon" /></button>
+            <div className="window" style={{display: showWindow ? 'flex' : 'none'}}>
+                <div className = "window-top">
+                    <button className = "custom-button exit-button" onClick = { () => toggle(name) }><IoIosClose className="button-icon" /></button>
+                </div>
+                <div className='window-content'>
+                    {children}
+                </div>
             </div>
-            <div className='window-content'>
-                {children}
-            </div>
-        </div>
         </Draggable>
 
     )
