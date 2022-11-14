@@ -1,4 +1,6 @@
+import Draggable from 'react-draggable';
 import 'weather-icons/css/weather-icons.css';
+import '../../Styles/WeatherWidget.css'
 
 
 const WeatherContent = ({content}) => {
@@ -30,10 +32,13 @@ const WeatherContent = ({content}) => {
     }
 
     return(
+        <Draggable>
+
         <div className ="weather-widget">
             <i className={"wi " + getIconClass()}/>
             <p>{content.weather[0].id}</p>
         </div>
+        </Draggable>
     )
     
 }

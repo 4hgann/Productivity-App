@@ -1,0 +1,6 @@
+.weather-widget{
+    background-color:white;
+    width: clamp(250px, 20vw, 400px);
+    aspect-ratio:7/4;
+    position:absolute;
+}
