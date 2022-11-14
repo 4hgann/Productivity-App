@@ -1,6 +1,8 @@
 .weather-widget{
-    background-color:white;
+    background: linear-gradient(0deg, rgba(19,102,139,1) 0%, rgba(99,196,255,1) 50%);
+    color:white;
     width: clamp(250px, 20vw, 400px);
     aspect-ratio:7/4;
     position:absolute;
+    border-radius: 5%;
 }
