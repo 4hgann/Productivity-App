@@ -19,9 +19,8 @@ function App() {
         <FeatureWindow name='clock'>
           <ClockHome/>
         </FeatureWindow>
-        <FeatureWindow name='weather'>
-          <WeatherWidget/>
-        </FeatureWindow>
+
+        <WeatherWidget name='weather'/>
 
       </div>
     </div>

@@ -12,6 +12,7 @@ const UseGet = ((url, initialValue) => {
             setError(false);
 
             fetch(url).then((res) =>  {
+                console.log('begin fetch')
                 if(res.ok){
                     console.log('all good')
                     return res.json()
