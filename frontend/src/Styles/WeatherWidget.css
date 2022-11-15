@@ -43,9 +43,17 @@
 .icon{
     margin-bottom: 0px;
 }
+
 .icon-label{
     font-size:20pt;
     text-align: center;
     position: relative;
     margin-top:-30px;
+}
+
+.temperature{
+    font-size:24pt;
+    justify-content:center;
+    align-items: center;
+    margin:auto;
 }

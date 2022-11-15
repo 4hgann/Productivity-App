@@ -27,11 +27,11 @@ const WeatherContent = ({content}) => {
                 </div>
                 <div className ="main">
                     <div className="icon-wrapper main-item">
-                        <img src= {'http://openweathermap.org/img/wn/' + weatherInfo.icon + '@4x.png'} className="icon"/>
+                        <img src= {'http://openweathermap.org/img/wn/' + weatherInfo.icon + '@4x.png'} className="icon" draggable="false"/>
                         <p className="icon-label">{weatherInfo.main}</p>
                     </div>
                     <div className="main-item">
-                    <p className="icon-label">{content.main.temp}°C</p>
+                    <p className="temperature">{content.main.temp}°C</p>
                     </div>
                 </div>
             </div>
