@@ -1,4 +1,7 @@
+import { Button } from 'antd';
 import Draggable from 'react-draggable';
+import { IoMdRefresh, IoMdSettings } from 'react-icons/io';
+import { IconContext } from 'react-icons/lib';
 import 'weather-icons/css/weather-icons.css';
 import '../../Styles/WeatherWidget.css'
 
@@ -33,11 +36,19 @@ const WeatherContent = ({content}) => {
 
     return(
         <Draggable>
+            <div className="weather-widget">
+                <div className="control">
+                    <IconContext.Provider value={{size: "30px"}}>
 
-        <div className ="weather-widget">
-            <i className={"wi " + getIconClass()}/>
-            <p>{content.weather[0].id}</p>
-        </div>
+                    <IoMdRefresh className="button widget-button"/>
+                    <IoMdSettings className="button widget-button"/>
+                    </IconContext.Provider>
+                </div>
+                <div className ="main">
+                    <i className={"wi " + getIconClass()}/>
+                    <p>{content.weather[0].id}</p>
+                </div>
+            </div>
         </Draggable>
     )
     
