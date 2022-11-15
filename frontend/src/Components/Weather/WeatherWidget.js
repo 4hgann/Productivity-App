@@ -10,7 +10,7 @@ const WeatherWidget = ({name}) => {
 
     const { toggle, getDisplayValue } = useContext(UIContext)
     const showWindow = getDisplayValue(name)
-    const {data, isLoading, isError} = UseGet(`http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=${OpenWeatherAPIKey}`, "")
+    const {data, isLoading, isError} = UseGet(`http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=${OpenWeatherAPIKey}&&units=metric`, "")
 
     return(
         <div style={{display: showWindow ? 'flex' : 'none'}}>

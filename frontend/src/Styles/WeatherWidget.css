@@ -9,10 +9,43 @@
     flex-direction: column;
 }
 
-.control{
-    margin-left:auto;
-}
-
 .widget-button{
     margin:10px;
+}
+
+.control{
+    display:flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.name-text{
+    font-size:14pt;
+    margin: auto;
+    margin-left: 20px;
+}
+
+.main{
+    display:flex;
+    flex-direction:row;
+    position:relative;
+    margin-top:-30px;
+}
+
+.main-item{
+    margin:auto;
+}
+
+.icon-wrapper{
+    margin-bottom: 0px;
+}
+
+.icon{
+    margin-bottom: 0px;
+}
+.icon-label{
+    font-size:20pt;
+    text-align: center;
+    position: relative;
+    margin-top:-30px;
 }
