@@ -3,9 +3,10 @@ import Draggable from 'react-draggable';
 import { IoMdRefresh, IoMdSettings } from 'react-icons/io';
 import { IconContext } from 'react-icons/lib';
 import '../../Styles/WeatherWidget.css'
+import SetLocationPane from './SetLocationPane';
 
 
-const WeatherContent = ({content}) => {
+const WeatherContent = ({content, refresh}) => {
     const weatherInfo = content.weather[0];
     // Use the ID from OpenWeatherAPI call to determine the weather icon to be rendered
     const getIconClass = () =>{
@@ -21,8 +22,8 @@ const WeatherContent = ({content}) => {
                 <div className="control">
                     <p className="name-text">{content.name}</p>
                     <IconContext.Provider value={{size: "30px"}}>
-                        <IoMdRefresh className="button widget-button"/>
-                        <IoMdSettings className="button widget-button"/>
+                        <IoMdRefresh className="button widget-button" onClick={refresh}/>
+                        <SetLocationPane/>
                     </IconContext.Provider>
                 </div>
                 <div className ="main">

@@ -5,6 +5,7 @@ const UseGet = ((url, initialValue) => {
     const [data,setData] = useState(initialValue);
     const [isLoading, setLoading] = useState(true);
     const [isError, setError] = useState(false);
+    const [refresh, setRefresh] = useState(false);
 
     useEffect(() =>{
         async function fetchData() {
@@ -34,9 +35,9 @@ const UseGet = ((url, initialValue) => {
            );
         }
         fetchData();
-    }, [url])
+    }, [url, refresh])
 
-    return {data, isLoading, isError}
+    return {data, isLoading, isError, refresh, setRefresh}
 })
 
 export default UseGet;
