@@ -23,7 +23,7 @@ const WeatherContent = ({content, refresh}) => {
                     <p className="name-text">{content.name}</p>
                     <IconContext.Provider value={{size: "30px"}}>
                         <IoMdRefresh className="button widget-button" onClick={refresh}/>
-                        <SetLocationPane/>
+                        <SetLocationPane />
                     </IconContext.Provider>
                 </div>
                 <div className ="main">
