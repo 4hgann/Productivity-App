@@ -1,43 +1,63 @@
 import { useEffect, useRef, useState } from "react"
-import { Modal, Select } from "antd";
+import { message, Modal, Select } from "antd";
 import { IoMdSettings } from 'react-icons/io';
 import '../../Styles/WeatherWidget.css'
 import { City, Country } from "country-state-city";
 
 
-function SetLocationPane({callbackHandler}) {
+function SetLocationPane({callback}) {
 
     const [showModal, toggleShowModal] = useState(false);
     const [cities, setCities] = useState([])
     const [currentCity, setCurrentCity] = useState(null)
+    const [currentCountry, setCurrentCountry] = useState(null)
+    const [currentUnits, setCurrentUnits] = useState(null)
 
     const countries = [].concat(...Country.getAllCountries()).map(({name, isoCode})=>{
         return {value: name, label: name, countryCode: isoCode}
     });
     
-    let chosenCountry;
-    let chosenCity;
     
     const toggle = () => toggleShowModal(!showModal)
 
-    const submit = () =>{
-        console.log(chosenCountry)
+    const submit = (value) =>{
+        if(currentCity && currentCountry && currentUnits){
+            console.log(currentCity)
+            const countryCode = countries.find((country) => country.value === currentCountry).countryCode
+            console.log(countryCode)
+            console.log(currentUnits)
+            console.log({city: currentCity, country: countryCode, units:currentUnits})
+            callback({city: currentCity, country: countryCode, units:currentUnits})
+        }
+        else{
+            message.error("Fill out all fields ya cunt")
+        }
     }
 
     const countryChangeHandler = (value) => {
-        chosenCountry = value;
+        setCurrentCountry(value)
         setCurrentCity(null)
-        // Fetch country code of element
-        const countryData = countries.find((country) => country.value === chosenCountry)
+
+        const countryData = countries.find((country) => country.value === value)
         setCities( [].concat(...City.getCitiesOfCountry(countryData.countryCode)).map(({name}) => {
             return {value: name, label:name}
         }))
     }
-    
 
-
-
-
+    const units = [
+        {
+            label: "Kelvin",
+            value: "standard"
+        },
+        {
+            label: "Metric",
+            value: "metric"
+        },
+        {
+            label: "Imperial",
+            value: "imperial"
+        }
+    ]
 
     return(
         <>
@@ -51,7 +71,7 @@ function SetLocationPane({callbackHandler}) {
                 filterOption={(inputValue, option) =>
                 option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
                 }
-                value={chosenCountry}
+                value={currentCountry}
                 onChange={(value) => countryChangeHandler(value)}
                 allowClear
                 showSearch
@@ -69,6 +89,13 @@ function SetLocationPane({callbackHandler}) {
                 allowClear
                 onChange={(value) => setCurrentCity(value)}
                 showSearch
+                style={{width:"300px"}}
+            />
+            <Select
+                value = {currentUnits}
+                onChange={(value) => setCurrentUnits(value)}
+                options={units}
+                placeholder="Unit Type"
                 style={{width:"300px"}}
             />
             </Modal>

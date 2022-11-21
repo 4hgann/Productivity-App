@@ -6,7 +6,7 @@ import '../../Styles/WeatherWidget.css'
 import SetLocationPane from './SetLocationPane';
 
 
-const WeatherContent = ({content, refresh}) => {
+const WeatherContent = ({content, refresh, callback}) => {
     const weatherInfo = content.weather[0];
     // Use the ID from OpenWeatherAPI call to determine the weather icon to be rendered
     const getIconClass = () =>{
@@ -23,7 +23,7 @@ const WeatherContent = ({content, refresh}) => {
                     <p className="name-text">{content.name}</p>
                     <IconContext.Provider value={{size: "30px"}}>
                         <IoMdRefresh className="button widget-button" onClick={refresh}/>
-                        <SetLocationPane />
+                        <SetLocationPane callback={callback}/>
                     </IconContext.Provider>
                 </div>
                 <div className ="main">
