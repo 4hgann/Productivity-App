@@ -1,4 +1,5 @@
 import { message } from "antd";
+
 import { useEffect, useState } from "react";
 
 const UseGet = ((url, initialValue) => {
@@ -13,19 +14,15 @@ const UseGet = ((url, initialValue) => {
             setError(false);
 
             fetch(url).then((res) =>  {
-                console.log('begin fetch')
                 if(res.ok){
-                    console.log('all good')
                     return res.json()
                 }
                 else{
-                    console.log('error')
                     throw new Error('There was a problem fetching that data')
                 }
             })
             .then(
                 (res) => {
-                    console.log(res.name);
                     setData(res);
                     setLoading(false);
                 }

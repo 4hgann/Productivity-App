@@ -1,9 +1,10 @@
-import { useEffect, useRef, useState } from "react"
 import { message, Modal, Select } from "antd";
 import { IoMdSettings } from 'react-icons/io';
-import '../../Styles/WeatherWidget.css'
 import { City, Country } from "country-state-city";
 
+import { useState } from "react"
+
+import '../../Styles/WeatherWidget.css'
 
 function SetLocationPane({callback}) {
 
@@ -13,31 +14,29 @@ function SetLocationPane({callback}) {
     const [currentCountry, setCurrentCountry] = useState(null)
     const [currentUnits, setCurrentUnits] = useState(null)
 
+    // Format countries for display in dropdown
     const countries = [].concat(...Country.getAllCountries()).map(({name, isoCode})=>{
         return {value: name, label: name, countryCode: isoCode}
     });
-    
-    
+
     const toggle = () => toggleShowModal(!showModal)
 
-    const submit = (value) =>{
+    const submit = () =>{
         if(currentCity && currentCountry && currentUnits){
-            console.log(currentCity)
             const countryCode = countries.find((country) => country.value === currentCountry).countryCode
-            console.log(countryCode)
-            console.log(currentUnits)
-            console.log({city: currentCity, country: countryCode, units:currentUnits})
             callback({city: currentCity, country: countryCode, units:currentUnits})
         }
         else{
-            message.error("Fill out all fields ya cunt")
+            message.error('Fields are missing, please fill them all out')
         }
     }
 
+    // On changing the country change the city dropdown content to reflect the new countries cities
     const countryChangeHandler = (value) => {
         setCurrentCountry(value)
         setCurrentCity(null)
 
+        // Fetch and format new country data
         const countryData = countries.find((country) => country.value === value)
         setCities( [].concat(...City.getCitiesOfCountry(countryData.countryCode)).map(({name}) => {
             return {value: name, label:name}
@@ -61,13 +60,13 @@ function SetLocationPane({callback}) {
 
     return(
         <>
-            <IoMdSettings className="button widget-button" onClick ={toggle}/>
+            <IoMdSettings className='button widget-button' onClick ={toggle}/>
 
-            <Modal title="Configure Weather Data" visible={showModal} onOk={submit} onCancel={toggle}>
+            <Modal title='Configure Weather Data' visible={showModal} onOk={submit} onCancel={toggle}>
             <Select
                 options={countries}
-                placeholder="Choose a country"
-                optionFilterProp="children"
+                placeholder='Choose a country'
+                optionFilterProp='children'
                 filterOption={(inputValue, option) =>
                 option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
                 }
@@ -75,13 +74,13 @@ function SetLocationPane({callback}) {
                 onChange={(value) => countryChangeHandler(value)}
                 allowClear
                 showSearch
-                style={{width:"300px"}}
+                style={{width:'300px'}}
             />
 
             <Select
                 options={cities}
-                placeholder="Choose a city"
-                optionFilterProp="children"
+                placeholder='Choose a city'
+                optionFilterProp='children'
                 filterOption={(inputValue, option) =>
                 option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
                 }
@@ -89,14 +88,14 @@ function SetLocationPane({callback}) {
                 allowClear
                 onChange={(value) => setCurrentCity(value)}
                 showSearch
-                style={{width:"300px"}}
+                style={{width:'300px'}}
             />
             <Select
                 value = {currentUnits}
                 onChange={(value) => setCurrentUnits(value)}
                 options={units}
-                placeholder="Unit Type"
-                style={{width:"300px"}}
+                placeholder='Unit Type'
+                style={{width:'300px'}}
             />
             </Modal>
         </>
