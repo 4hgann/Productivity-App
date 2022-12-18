@@ -17,11 +17,11 @@ function AddTodoPane() {
     const dateFormat = 'DD/MM/YYYY';
     const { Text } = Typography;
 
-    const onChange = (date, dateString) => {
+    const onChange = (date, readableDate) => {
         setDisplayDate(moment(new Date(date._d), dateFormat))
-        setDate(date._d.getTime())
+        setDate(date)
 
-        console.log(dateString)
+        console.log(readableDate)
         console.log(date._d.getTime())
     }
 
@@ -32,7 +32,8 @@ function AddTodoPane() {
         else{
             const newTodo = {
                 name: todoName,
-                due: date,
+                due: displayDate._d.toLocaleDateString(),
+                unixTime: date._d.getTime(),
                 isCompleted: false
             }
             addTodo(newTodo)
