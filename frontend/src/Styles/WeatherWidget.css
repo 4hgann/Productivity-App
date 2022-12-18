@@ -1,7 +1,7 @@
 .weather-widget{
     background: linear-gradient(0deg, rgba(22,132,181,1) 0%, rgba(99,196,255,1) 50%);
     color:white;
-    width: clamp(250px, 20vw, 400px);
+    width: clamp(20vw, 20vw, 400px);
     aspect-ratio:7/4;
     position:absolute;
     border-radius: 5%;
@@ -56,5 +56,9 @@
     font-size:24pt;
     justify-content:center;
     align-items: center;
+    margin:auto;
+}
+
+.loading{
     margin:auto;
 }

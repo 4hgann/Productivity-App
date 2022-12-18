@@ -8,16 +8,7 @@ import SetLocationPane from './SetLocationPane';
 
 const WeatherContent = ({content, refresh, callback}) => {
     const weatherInfo = content.weather[0];
-    // Use the ID from OpenWeatherAPI call to determine the weather icon to be rendered
-    const getIconClass = () =>{
-        let id = weatherInfo.id.toString();
-        id = id.trim();
-        console.log('wi-owm-'+id)
-        return "wi-owm-" + id;
-    }
-
     return(
-        <Draggable>
             <div className="weather-widget">
                 <div className="control">
                     <p className="name-text">{content.name}</p>
@@ -36,7 +27,6 @@ const WeatherContent = ({content, refresh, callback}) => {
                     </div>
                 </div>
             </div>
-        </Draggable>
     )
     
 }

@@ -1,10 +1,12 @@
-import { Spin } from "antd"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import WeatherContent from "./WeatherContent"
 import OpenWeatherAPIKey from "../../keys/OpenWeather";
 import UseGet from "../../Hooks/UseGet";
 import { UIContext } from "../../Contexts/UIContext";
 import { useContext } from "react";
+import Draggable from 'react-draggable';
+import '../../Styles/WeatherWidget.css'
+import LoadingWeather from "./LoadingWeather";
 
 const WeatherWidget = ({name}) => {
 
@@ -23,7 +25,11 @@ const WeatherWidget = ({name}) => {
 
     return(
         <div style={{display: showWindow ? 'flex' : 'none'}}>
-            {isLoading ? <Spin/> :<WeatherContent content={data} refresh={refreshData} callback={configChangeHandler}/>}
+            <Draggable>
+                <div>
+                    { !isLoading ? <WeatherContent content={data} refresh={refreshData} callback={configChangeHandler}/> : <LoadingWeather/>}
+                </div>
+            </Draggable>
         </div>
     )
 }
