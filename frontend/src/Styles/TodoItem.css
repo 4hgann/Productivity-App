@@ -1,22 +1,52 @@
+:root{
+    --green: #2E8B57;
+    --red: #CD001A;
+}
+
 .todo-item{
     display:flex;
     flex-direction:row;
     justify-content: space-between;
-    background-color:#B0BEC5;
+    background-color:#ffffff;
     border: 1px solid black;
-    margin: 10px 0;
-    padding: 5px;
 }
 
 .left{
+    margin: auto 0 auto 10px;
+}
+
+.todo-btn:hover{
+    cursor: pointer;
+}
+
+.todo-btn{
+    height:100%;
     margin: 0;
+    border:none;
+    width:40px;
+    color:#fff;
+    transition: background-color 200ms, color 200ms;
 }
 
-.button-icon{
-    height:30px;
-    width: 30px;
+.icon{
+    height:100%;
+    margin:auto;
 }
 
-.todo-button{
-    margin: 0 6px;
+.complete{
+    background-color:var(--green);
+}
+
+.complete:hover{
+    background-color:#fff;
+    color:var(--green);
+}
+
+.trash{
+    background-color:var(--red);
+}
+
+.trash:hover{
+    background-color:#fff;
+    color:var(--red)
 }
