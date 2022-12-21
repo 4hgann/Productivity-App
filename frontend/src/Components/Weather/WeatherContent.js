@@ -1,11 +1,14 @@
-import { IoMdRefresh } from 'react-icons/io';
+import { IoMdRefresh, IoIosClose, IoIosCloseCircle } from 'react-icons/io';
 import { IconContext } from 'react-icons/lib';
 import SetLocationPane from './SetLocationPane';
 
 import '../../Styles/WeatherWidget.css'
+import { useContext } from 'react';
+import { UIContext } from '../../Contexts/UIContext';
 
 const WeatherContent = ({content, refresh, callback, units}) => {
     const weatherInfo = content.weather[0];
+    const { toggle } = useContext(UIContext)
 
     let unitText;
     if(units=== 'metric')
@@ -26,6 +29,7 @@ const WeatherContent = ({content, refresh, callback, units}) => {
                     <IconContext.Provider value={{size: '30px'}}>
                         <IoMdRefresh className='button widget-button' onClick={refresh}/>
                         <SetLocationPane callback={callback}/>
+                        <IoIosCloseCircle className='button widget-button' onClick ={() => toggle('weather')}/>
                     </IconContext.Provider>
                 </div>
                 <div className ='main'>

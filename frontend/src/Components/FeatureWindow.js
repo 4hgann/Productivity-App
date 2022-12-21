@@ -15,7 +15,8 @@ const FeatureWindow = ( { children, name } ) => {
             <div className="window" style={{display: showWindow ? 'flex' : 'none'}}>
                 <div className = "window-top">
                     <IconContext.Provider value={{size: '30px'}}>
-                        <button className = "custom-button exit-button" onClick = { () => toggle(name) }><IoIosClose className="" /></button>
+                        <button className = "custom-button exit-button" onClick = { () => toggle(name) }><IoIosClose/></button>
+                        
                     </IconContext.Provider>
                 </div>
                 <div className='window-content'>
