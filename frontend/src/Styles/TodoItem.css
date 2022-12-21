@@ -7,12 +7,27 @@
     display:flex;
     flex-direction:row;
     justify-content: space-between;
-    background-color:#ffffff;
-    border: 1px solid black;
+    background-color:#ececec;
+    border: 1px solid #c5c5c5;
+    margin: 0 5px;
+    border-style: none solid solid solid;
+}
+
+.complete{
+    background-color: #00d800;
+}
+
+.first{
+    border-style: solid;
 }
 
 .left{
-    margin: auto 0 auto 10px;
+    margin: auto auto auto 10px;
+}
+
+.right{
+    margin: 0;
+    display:flex;
 }
 
 .todo-btn:hover{
@@ -33,20 +48,20 @@
     margin:auto;
 }
 
-.complete{
+.complete-btn{
     background-color:var(--green);
 }
 
-.complete:hover{
+.complete-btn:hover{
     background-color:#fff;
     color:var(--green);
 }
 
-.trash{
+.trash-btn{
     background-color:var(--red);
 }
 
-.trash:hover{
+.trash-btn:hover{
     background-color:#fff;
     color:var(--red)
 }

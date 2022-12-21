@@ -4,14 +4,20 @@ import TodoItem from "./TodoItem";
 import AddTodoPane from "./AddTodoPane";
 
 import '../../Styles/TodoList.css';
+import '../../Styles/TodoItem.css'
 
 export default function TodoList(){
     const { todos } = useContext(todoContext)
 
     return(
         <div className = "todo-container">
+                <p className="heading">Todos</p>
             <div className ="top">
-                {todos.map((item, index) => <TodoItem todo={item} index={index}/>)}
+                {
+                    todos.map((item, index) => {
+                        return <TodoItem todo={item} index={index}/>
+                    })
+                }
             </div>
             
             <div className="bottom">
