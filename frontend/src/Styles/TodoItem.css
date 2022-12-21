@@ -1,6 +1,7 @@
 :root{
     --green: #2E8B57;
     --red: #CD001A;
+    --purple: #4E1E66;
 }
 
 .todo-item{
@@ -14,7 +15,7 @@
 }
 
 .complete{
-    background-color: #00d800;
+    text-decoration:line-through;
 }
 
 .first{
@@ -55,6 +56,15 @@
 .complete-btn:hover{
     background-color:#fff;
     color:var(--green);
+}
+
+.incomplete-btn{
+    background-color:var(--purple);
+}
+
+.incomplete-btn:hover{
+    background-color:#fff;
+    color:var(--purple);
 }
 
 .trash-btn{
