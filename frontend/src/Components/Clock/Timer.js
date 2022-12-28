@@ -1,8 +1,9 @@
 import { Button, message } from 'antd';
 import { useEffect, useState } from 'react'
-import '../../Styles/Timer.css'
-import 'antd/lib/button/style/index.css'
 import SetTimePane from './SetTimePane';
+
+import '../../Styles/Timer.css'
+import '../../Styles/TimeFont.css'
 
 const Timer = () => {
     const [[hours, minutes, seconds], setTime] = useState([0,0,0]);
@@ -59,9 +60,9 @@ const Timer = () => {
 
     return(
         <div className='timer'>
-            <p>{`
-                ${hours.toString().padStart(2, '0')}:
-                ${minutes.toString().padStart(2, '0')}:
+            <p className="time">{`
+                ${hours.toString().padStart(2, '0')} :
+                ${minutes.toString().padStart(2, '0')} :
                 ${seconds.toString().padStart(2, '0')}
                 `}
             </p>

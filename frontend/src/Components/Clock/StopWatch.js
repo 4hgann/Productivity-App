@@ -1,5 +1,10 @@
 import { Button } from "antd";
+
 import { useEffect, useState } from "react"
+
+import '../../Styles/Timer.css'
+import '../../Styles/TimeFont.css'
+import '../../Styles/TimePane.css'
 
 const StopWatch = () => {
     const [seconds, setSeconds] = useState(0);
@@ -24,10 +29,20 @@ const StopWatch = () => {
     }
 
     return(
-        <div>
-            <p>{seconds}</p>
-            <Button onClick={() => toggleTimer()}>{isRunning ? "Stop" : "Start" }</Button>
+        <>
+        <div className="timer">
+            <p className="time">
+                {`
+                ${(Math.floor(seconds/3600)).toString().padStart(2, '0')} :
+                ${(Math.floor(seconds/60)).toString().padStart(2, '0')} :
+                ${(seconds % 60).toString().padStart(2, '0')}
+                `}
+            </p>
         </div>
+            <div className="bottom">
+                <Button className="add-button" onClick={() => toggleTimer()} type="primary" block>{isRunning ? "Stop" : "Start" }</Button>
+            </div>
+        </>
     )
 }
 export default StopWatch;

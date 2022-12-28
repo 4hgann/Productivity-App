@@ -20,7 +20,7 @@ function SetTimePane({callbackHandler}) {
 
     return(
         <div>
-            <Button className = "add-button" type="primary" block onClick={() => toggleShowModal(!showModal)}>
+            <Button className="add-button" type="primary" block onClick={() => toggleShowModal(!showModal)}>
                  Set Time
             </Button>
 

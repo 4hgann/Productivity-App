@@ -1,5 +1,3 @@
-@import '~antd/dist/antd.css';
-
 .mainButtons{
     display:flex;
     flex-direction: row;

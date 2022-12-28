@@ -5,9 +5,23 @@
     overflow-y: hidden;   
 }
 
+.headings{
+    display:flex;
+    justify-content: center;
+}
+
+.heading, .sort{
+    margin: 5px 0 5px auto;
+}
+
 .heading{
-    margin:5px auto;
     font-size:12pt;
+}
+
+.sort{
+    position: absolute;
+    right: 5px;
+    padding: 5px !important;
 }
 
 .bottom{
