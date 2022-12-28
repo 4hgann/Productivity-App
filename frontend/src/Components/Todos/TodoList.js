@@ -5,13 +5,18 @@ import AddTodoPane from "./AddTodoPane";
 
 import '../../Styles/TodoList.css';
 import '../../Styles/TodoItem.css'
+import { Button } from "antd";
+import { IoMdArrowDown, IoMdArrowUp } from "react-icons/io";
 
 export default function TodoList(){
-    const { todos } = useContext(todoContext)
+    const { todos, earliestFirst, toggleOrder } = useContext(todoContext)
 
     return(
         <div className = "todo-container">
                 <p className="heading">Todos</p>
+                <Button icon = { !earliestFirst ? <IoMdArrowDown/> : <IoMdArrowUp/>} onClick={() => toggleOrder()}>
+
+                </Button>
             <div className ="top">
                 {
                     todos.map((item, index) => {

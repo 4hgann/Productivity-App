@@ -40,7 +40,7 @@
     margin: 0;
     border:none;
     width:40px;
-    color:#fff;
+    color:#ececec;
     transition: background-color 200ms, color 200ms;
 }
 
@@ -54,7 +54,7 @@
 }
 
 .complete-btn:hover{
-    background-color:#fff;
+    background-color:#ececec;
     color:var(--green);
 }
 
@@ -63,7 +63,7 @@
 }
 
 .incomplete-btn:hover{
-    background-color:#fff;
+    background-color:#ececec;
     color:var(--purple);
 }
 
@@ -72,6 +72,6 @@
 }
 
 .trash-btn:hover{
-    background-color:#fff;
+    background-color:#ececec;
     color:var(--red)
 }

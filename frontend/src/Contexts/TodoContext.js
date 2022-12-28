@@ -14,6 +14,11 @@ export function TodoContextProvider({ children }){
     const [earliestFirst, setEarliestFirst] = useState(true)
     const [refresh, setRefresh] = useState(false)
 
+    const toggleOrder = () => {
+      setEarliestFirst((value) => !value)
+      setRefresh((value) => !value)
+    }
+
     // Input validation and add the todo to array if valid else log 'error'
     const addTodo = (todo) => {
       //console.log('attempting to add todo: ', todo)
@@ -51,7 +56,7 @@ export function TodoContextProvider({ children }){
   
 
   const context = {
-    todos, earliestFirst, addTodo, setTodos, deleteTodo, toggleComplete,
+    todos, earliestFirst, toggleOrder, addTodo, setTodos, deleteTodo, toggleComplete,
   }
 
   return (

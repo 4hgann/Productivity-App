@@ -17,12 +17,9 @@ function AddTodoPane() {
     const dateFormat = 'DD/MM/YYYY';
     const { Text } = Typography;
 
-    const onChange = (date, readableDate) => {
+    const onChange = (date) => {
         setDisplayDate(moment(new Date(date._d), dateFormat))
         setDate(date)
-
-        console.log(readableDate)
-        console.log(date._d.getTime())
     }
 
     const verifyTodo = () => {
