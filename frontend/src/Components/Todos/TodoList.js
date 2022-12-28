@@ -24,10 +24,14 @@ export default function TodoList(){
                 </Button>
             </div>
             <div className ="top">
-                {
+                { todos.length > 0 ?
                     todos.map((item, index) => {
                         return <TodoItem todo={item} index={index}/>
                     })
+                    :
+                    <div className="empty">
+                        <p style={{textAlign: "center!", margin: "40% auto"}}>Hooray! There is nothing todo!</p>
+                    </div>
                 }
             </div>
             

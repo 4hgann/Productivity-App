@@ -1,8 +1,8 @@
-import Moon from '../Assets/full_moon.mp4';
+import Red from '../Assets/red.mp4'
 
 function LiveBackground () {
     return(
-        <video className='video-background' src={Moon} autoPlay muted loop/>
+        <video className='video-background' src={Red} autoPlay muted loop/>
     );
 }
 

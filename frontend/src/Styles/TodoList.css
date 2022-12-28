@@ -11,7 +11,8 @@
 }
 
 .heading, .sort{
-    margin: 5px 0 5px auto;
+    margin: 10px 0 10px auto;
+    padding: 5px !important;
 }
 
 .heading{
@@ -21,7 +22,6 @@
 .sort{
     position: absolute;
     right: 5px;
-    padding: 5px !important;
 }
 
 .bottom{

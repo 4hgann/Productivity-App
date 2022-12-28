@@ -17,4 +17,6 @@
 
 .add-button{
     border-radius: 0 0 5px 5px !important;
+    background-color: var(--blue) !important;
+    border-color:  var(--blue) !important;
 }

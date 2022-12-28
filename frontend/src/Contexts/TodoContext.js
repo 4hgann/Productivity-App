@@ -5,12 +5,7 @@ export const todoContext = createContext({});
 export function TodoContextProvider({ children }){
 
     // Format of todos: {name: string, due: unix date-time number, isCompleted: boolean}
-    const [todos,setTodos] = useState([{
-      "name": "test",
-      "due": "19/12/2022",
-      "unixTime": 1671431948296,
-      "isCompleted": false
-    }])
+    const [todos,setTodos] = useState([])
     const [earliestFirst, setEarliestFirst] = useState(true)
     const [refresh, setRefresh] = useState(false)
 
@@ -21,7 +16,6 @@ export function TodoContextProvider({ children }){
 
     // Input validation and add the todo to array if valid else log 'error'
     const addTodo = (todo) => {
-      //console.log('attempting to add todo: ', todo)
       let newTodos = [...todos]
       newTodos.push(todo)
 

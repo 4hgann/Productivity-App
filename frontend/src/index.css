@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+:root{
+    --blue: #3297fc;
+}
+
 * {
     margin: 0;
     padding: 0;
