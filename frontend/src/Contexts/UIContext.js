@@ -1,31 +1,31 @@
-import { createContext, useState } from "react";
+import { createContext, useState } from "react"
 
-export const UIContext = createContext({});
+export const UIContext = createContext({})
 
 export function UIContextProvider({ children }) {
-  const [showTodos, toggleTodos] = useState(false);
-  const [showClock, toggleClock] = useState(false);
-  const [showWeather, toggleWeather] = useState(false);
+  const [showTodos, toggleTodos] = useState(false)
+  const [showClock, toggleClock] = useState(false)
+  const [showWeather, toggleWeather] = useState(false)
 
   const toggle = (name) => {
     if (name === "todo") {
-      toggleTodos(!showTodos);
+      toggleTodos(!showTodos)
     } else if (name == "clock") {
-      toggleClock(!showClock);
+      toggleClock(!showClock)
     } else if (name == "weather") {
-      toggleWeather(!showWeather);
+      toggleWeather(!showWeather)
     }
-  };
+  }
 
   const getDisplayValue = (name) => {
     if (name === "todo") {
-      return showTodos;
+      return showTodos
     } else if (name === "clock") {
-      return showClock;
+      return showClock
     } else if (name == "weather") {
-      return showWeather;
+      return showWeather
     }
-  };
+  }
 
   const context = {
     showTodos,
@@ -33,7 +33,7 @@ export function UIContextProvider({ children }) {
     showWeather,
     toggle,
     getDisplayValue,
-  };
+  }
 
-  return <UIContext.Provider value={context}>{children}</UIContext.Provider>;
+  return <UIContext.Provider value={context}>{children}</UIContext.Provider>
 }

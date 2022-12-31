@@ -1,9 +1,9 @@
-import { Tabs } from "antd";
-import Timer from "./Timer";
-import StopWatch from "./StopWatch";
+import { Tabs } from "antd"
+import Timer from "./Timer"
+import StopWatch from "./StopWatch"
 
 const ClockHome = () => {
-  const { TabPane } = Tabs;
+  const { TabPane } = Tabs
   return (
     <Tabs defaultActiveKey="1" centered>
       <TabPane key="2" tab="Countdown">
@@ -13,7 +13,7 @@ const ClockHome = () => {
         <StopWatch />
       </TabPane>
     </Tabs>
-  );
-};
+  )
+}
 
-export default ClockHome;
+export default ClockHome

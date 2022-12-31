@@ -1,10 +1,10 @@
-import { useContext } from "react";
-import { IconContext } from "react-icons";
-import { IoMdTrash, IoMdCheckmark, IoMdClose } from "react-icons/io";
-import { todoContext } from "../../Contexts/TodoContext";
-import "../../Styles/TodoItem.css";
+import { useContext } from "react"
+import { IconContext } from "react-icons"
+import { IoMdTrash, IoMdCheckmark, IoMdClose } from "react-icons/io"
+import { todoContext } from "../../Contexts/TodoContext"
+import "../../Styles/TodoItem.css"
 export default function TodoItem({ todo, index }) {
-  const { deleteTodo, toggleComplete } = useContext(todoContext);
+  const { deleteTodo, toggleComplete } = useContext(todoContext)
   return (
     <div
       className={
@@ -43,5 +43,5 @@ export default function TodoItem({ todo, index }) {
         </IconContext.Provider>
       </div>
     </div>
-  );
+  )
 }

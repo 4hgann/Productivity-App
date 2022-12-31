@@ -1,16 +1,16 @@
-import { todoContext } from "../../Contexts/TodoContext";
-import { useContext } from "react";
-import TodoItem from "./TodoItem";
-import AddTodoPane from "./AddTodoPane";
+import { todoContext } from "../../Contexts/TodoContext"
+import { useContext } from "react"
+import TodoItem from "./TodoItem"
+import AddTodoPane from "./AddTodoPane"
 
-import "../../Styles/TodoList.css";
-import "../../Styles/TodoItem.css";
-import { Button } from "antd";
-import { IoMdArrowDown, IoMdArrowUp } from "react-icons/io";
-import { IconContext } from "react-icons/lib";
+import "../../Styles/TodoList.css"
+import "../../Styles/TodoItem.css"
+import { Button } from "antd"
+import { IoMdArrowDown, IoMdArrowUp } from "react-icons/io"
+import { IconContext } from "react-icons/lib"
 
 export default function TodoList() {
-  const { todos, earliestFirst, toggleOrder } = useContext(todoContext);
+  const { todos, earliestFirst, toggleOrder } = useContext(todoContext)
 
   return (
     <div className="todo-container">
@@ -25,7 +25,7 @@ export default function TodoList() {
       <div className="top">
         {todos.length > 0 ? (
           todos.map((item, index) => {
-            return <TodoItem todo={item} index={index} />;
+            return <TodoItem todo={item} index={index} />
           })
         ) : (
           <div className="empty">
@@ -40,5 +40,5 @@ export default function TodoList() {
         <AddTodoPane className="add-button" />
       </div>
     </div>
-  );
+  )
 }

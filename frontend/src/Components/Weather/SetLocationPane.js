@@ -1,57 +1,57 @@
-import { message, Modal, Select } from "antd";
-import { IoMdSettings } from "react-icons/io";
-import { City, Country } from "country-state-city";
+import { message, Modal, Select } from "antd"
+import { IoMdSettings } from "react-icons/io"
+import { City, Country } from "country-state-city"
 
-import { useState } from "react";
+import { useState } from "react"
 
-import "../../Styles/WeatherWidget.css";
+import "../../Styles/WeatherWidget.css"
 
 function SetLocationPane({ callback }) {
-  const [showModal, toggleShowModal] = useState(false);
-  const [cities, setCities] = useState([]);
-  const [currentCity, setCurrentCity] = useState(null);
-  const [currentCountry, setCurrentCountry] = useState(null);
-  const [currentUnits, setCurrentUnits] = useState(null);
+  const [showModal, toggleShowModal] = useState(false)
+  const [cities, setCities] = useState([])
+  const [currentCity, setCurrentCity] = useState(null)
+  const [currentCountry, setCurrentCountry] = useState(null)
+  const [currentUnits, setCurrentUnits] = useState(null)
 
   // Format countries for display in dropdown
   const countries = []
     .concat(...Country.getAllCountries())
     .map(({ name, isoCode }) => {
-      return { value: name, label: name, countryCode: isoCode };
-    });
+      return { value: name, label: name, countryCode: isoCode }
+    })
 
-  const toggle = () => toggleShowModal(!showModal);
+  const toggle = () => toggleShowModal(!showModal)
 
   const submit = () => {
     if (currentCity && currentCountry && currentUnits) {
       const countryCode = countries.find(
         (country) => country.value === currentCountry
-      ).countryCode;
+      ).countryCode
       callback({
         city: currentCity,
         country: countryCode,
         units: currentUnits,
-      });
+      })
     } else {
-      message.error("Fields are missing, please fill them all out");
+      message.error("Fields are missing, please fill them all out")
     }
-  };
+  }
 
   // On changing the country change the city dropdown content to reflect the new countries cities
   const countryChangeHandler = (value) => {
-    setCurrentCountry(value);
-    setCurrentCity(null);
+    setCurrentCountry(value)
+    setCurrentCity(null)
 
     // Fetch and format new country data
-    const countryData = countries.find((country) => country.value === value);
+    const countryData = countries.find((country) => country.value === value)
     setCities(
       []
         .concat(...City.getCitiesOfCountry(countryData.countryCode))
         .map(({ name }) => {
-          return { value: name, label: name };
+          return { value: name, label: name }
         })
-    );
-  };
+    )
+  }
 
   const units = [
     {
@@ -66,7 +66,7 @@ function SetLocationPane({ callback }) {
       label: "Imperial",
       value: "imperial",
     },
-  ];
+  ]
 
   return (
     <>
@@ -114,7 +114,7 @@ function SetLocationPane({ callback }) {
         />
       </Modal>
     </>
-  );
+  )
 }
 
-export default SetLocationPane;
+export default SetLocationPane

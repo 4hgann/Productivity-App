@@ -1,22 +1,22 @@
-import { IoMdRefresh, IoIosClose, IoIosCloseCircle } from "react-icons/io";
-import { IconContext } from "react-icons/lib";
-import SetLocationPane from "./SetLocationPane";
+import { IoMdRefresh, IoIosClose, IoIosCloseCircle } from "react-icons/io"
+import { IconContext } from "react-icons/lib"
+import SetLocationPane from "./SetLocationPane"
 
-import "../../Styles/WeatherWidget.css";
-import { useContext } from "react";
-import { UIContext } from "../../Contexts/UIContext";
+import "../../Styles/WeatherWidget.css"
+import { useContext } from "react"
+import { UIContext } from "../../Contexts/UIContext"
 
 const WeatherContent = ({ content, refresh, callback, units }) => {
-  const weatherInfo = content.weather[0];
-  const { toggle } = useContext(UIContext);
+  const weatherInfo = content.weather[0]
+  const { toggle } = useContext(UIContext)
 
-  let unitText;
+  let unitText
   if (units === "metric") {
-    unitText = "C";
+    unitText = "C"
   } else if (units === "imperial") {
-    unitText = "F";
+    unitText = "F"
   } else {
-    unitText = "K";
+    unitText = "K"
   }
   return (
     <div className="weather-widget">
@@ -49,7 +49,7 @@ const WeatherContent = ({ content, refresh, callback, units }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default WeatherContent;
+export default WeatherContent

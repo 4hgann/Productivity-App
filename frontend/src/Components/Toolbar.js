@@ -1,12 +1,12 @@
-import { IoIosList, IoMdTime, IoMdCloudOutline } from "react-icons/io";
-import { IconContext } from "react-icons/lib";
-import { UIContext } from "../Contexts/UIContext";
-import { useContext } from "react";
+import { IoIosList, IoMdTime, IoMdCloudOutline } from "react-icons/io"
+import { IconContext } from "react-icons/lib"
+import { UIContext } from "../Contexts/UIContext"
+import { useContext } from "react"
 
-import "../Styles/Toolbar.css";
+import "../Styles/Toolbar.css"
 
 const Toolbar = () => {
-  const { toggle } = useContext(UIContext);
+  const { toggle } = useContext(UIContext)
   return (
     <div className="toolbar">
       <IconContext.Provider value={{ size: "20px" }}>
@@ -27,7 +27,7 @@ const Toolbar = () => {
         </button>
       </IconContext.Provider>
     </div>
-  );
-};
+  )
+}
 
-export default Toolbar;
+export default Toolbar

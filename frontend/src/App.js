@@ -1,10 +1,10 @@
-import LiveBackground from "./Components/LiveBackground";
-import Toolbar from "./Components/Toolbar";
-import FeatureWindow from "./Components/FeatureWindow";
-import TodoList from "./Components/Todos/TodoList";
-import ClockHome from "./Components/Clock/ClockHome";
-import "antd/dist/antd.css";
-import WeatherWidget from "./Components/Weather/WeatherWidget";
+import LiveBackground from "./Components/LiveBackground"
+import Toolbar from "./Components/Toolbar"
+import FeatureWindow from "./Components/FeatureWindow"
+import TodoList from "./Components/Todos/TodoList"
+import ClockHome from "./Components/Clock/ClockHome"
+import "antd/dist/antd.css"
+import WeatherWidget from "./Components/Weather/WeatherWidget"
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
         <WeatherWidget name="weather" />
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

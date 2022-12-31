@@ -1,20 +1,20 @@
-import { useContext, useState } from "react";
-import { Modal, Button, Typography, message, InputNumber } from "antd";
-import "../../Styles/TimePane.css";
+import { useContext, useState } from "react"
+import { Modal, Button, Typography, message, InputNumber } from "antd"
+import "../../Styles/TimePane.css"
 
 function SetTimePane({ callbackHandler }) {
-  const [secs, secsListener] = useState(1);
-  const [mins, minsListener] = useState(0);
-  const [hrs, hrsListener] = useState(0);
+  const [secs, secsListener] = useState(1)
+  const [mins, minsListener] = useState(0)
+  const [hrs, hrsListener] = useState(0)
 
-  const [showModal, toggleShowModal] = useState(false);
-  const { Text } = Typography;
+  const [showModal, toggleShowModal] = useState(false)
+  const { Text } = Typography
 
   const passTime = () => {
-    callbackHandler([hrs, mins, secs]);
-    message.success("The time has sucessfully been set!");
-    toggleShowModal(!showModal);
-  };
+    callbackHandler([hrs, mins, secs])
+    message.success("The time has sucessfully been set!")
+    toggleShowModal(!showModal)
+  }
 
   return (
     <div>
@@ -66,7 +66,7 @@ function SetTimePane({ callbackHandler }) {
         </div>
       </Modal>
     </div>
-  );
+  )
 }
 
-export default SetTimePane;
+export default SetTimePane

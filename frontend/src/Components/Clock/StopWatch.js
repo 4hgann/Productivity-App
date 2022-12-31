@@ -1,30 +1,30 @@
-import { Button } from "antd";
+import { Button } from "antd"
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
 
-import "../../Styles/Timer.css";
-import "../../Styles/TimeFont.css";
-import "../../Styles/TimePane.css";
+import "../../Styles/Timer.css"
+import "../../Styles/TimeFont.css"
+import "../../Styles/TimePane.css"
 
 const StopWatch = () => {
-  const [seconds, setSeconds] = useState(0);
-  const [isRunning, setRunning] = useState(false);
+  const [seconds, setSeconds] = useState(0)
+  const [isRunning, setRunning] = useState(false)
 
   useEffect(() => {
-    let interval = null;
+    let interval = null
     if (isRunning) {
       interval = setInterval(() => {
-        setSeconds((seconds) => seconds + 1);
-      }, 1000);
+        setSeconds((seconds) => seconds + 1)
+      }, 1000)
     } else if (!isRunning && seconds !== 0) {
-      clearInterval(interval);
+      clearInterval(interval)
     }
-    return () => clearInterval(interval);
-  }, [isRunning, seconds]);
+    return () => clearInterval(interval)
+  }, [isRunning, seconds])
 
   const toggleTimer = () => {
-    setRunning(!isRunning);
-  };
+    setRunning(!isRunning)
+  }
 
   return (
     <>
@@ -52,6 +52,6 @@ const StopWatch = () => {
         </Button>
       </div>
     </>
-  );
-};
-export default StopWatch;
+  )
+}
+export default StopWatch
