@@ -1,26 +1,26 @@
-.mainButtons{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-around;
+.mainButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
-.form-button{
-    border-radius: 0 0 5px;
+.form-button {
+  border-radius: 0 0 5px;
 }
 
-.bottom{
-    position:absolute;
-    bottom:0;
-    left:0;
-    border-radius: 0 0 5px;
+.bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 0 0 5px;
 }
 
-.timer{
-    text-align: center;
-    margin-top: 25%;
+.timer {
+  text-align: center;
+  margin-top: 25%;
 }
 
 .ant-btn {
-    display: flex;
-    border-radius: 5px;
+  display: flex;
+  border-radius: 5px;
 }

@@ -1,33 +1,34 @@
-.todo-container{
-    display:flex;
-    flex-direction: column;
-    height:100%;
-    overflow-y: hidden;   
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: hidden;
 }
 
-.headings{
-    display:flex;
-    justify-content: center;
+.headings {
+  display: flex;
+  justify-content: center;
 }
 
-.heading, .sort{
-    margin: 10px 0 10px auto;
-    padding: 5px !important;
+.heading,
+.sort {
+  margin: 10px 0 10px auto;
+  padding: 5px !important;
 }
 
-.heading{
-    font-size:12pt;
+.heading {
+  font-size: 12pt;
 }
 
-.sort{
-    position: absolute;
-    right: 5px;
+.sort {
+  position: absolute;
+  right: 5px;
 }
 
-.bottom{
-    position:absolute;
-    bottom: 0;
-    left:0;
-    width: 100%;
-    border-radius: 0 0 5px 5px;
+.bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 0 0 5px 5px;
 }

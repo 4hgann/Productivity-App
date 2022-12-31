@@ -1,22 +1,22 @@
-.datepicker{
-    width:100%;
+.datepicker {
+  width: 100%;
 }
 
-.addTodoModal{
-    display:flex;
-    flex-direction: column;
+.addTodoModal {
+  display: flex;
+  flex-direction: column;
 }
 
-.modal-item{
-    margin:10px 0;
+.modal-item {
+  margin: 10px 0;
 }
 
-.modal-heading{
-    font-size:14pt;
+.modal-heading {
+  font-size: 14pt;
 }
 
-.add-button{
-    border-radius: 0 0 5px 5px !important;
-    background-color: var(--blue) !important;
-    border-color:  var(--blue) !important;
+.add-button {
+  border-radius: 0 0 5px 5px !important;
+  background-color: var(--blue) !important;
+  border-color: var(--blue) !important;
 }

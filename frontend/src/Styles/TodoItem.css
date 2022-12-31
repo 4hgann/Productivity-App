@@ -1,77 +1,77 @@
-:root{
-    --green: #2E8B57;
-    --red: #CD001A;
-    --purple: #4E1E66;
+:root {
+  --green: #2e8b57;
+  --red: #cd001a;
+  --purple: #4e1e66;
 }
 
-.todo-item{
-    display:flex;
-    flex-direction:row;
-    justify-content: space-between;
-    background-color:#ececec;
-    border: 1px solid #c5c5c5;
-    margin: 0 5px;
-    border-style: none solid solid solid;
+.todo-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #ececec;
+  border: 1px solid #c5c5c5;
+  margin: 0 5px;
+  border-style: none solid solid solid;
 }
 
-.complete{
-    text-decoration:line-through;
+.complete {
+  text-decoration: line-through;
 }
 
-.first{
-    border-style: solid;
+.first {
+  border-style: solid;
 }
 
-.left{
-    margin: auto auto auto 10px;
+.left {
+  margin: auto auto auto 10px;
 }
 
-.right{
-    margin: 0;
-    display:flex;
+.right {
+  margin: 0;
+  display: flex;
 }
 
-.todo-btn:hover{
-    cursor: pointer;
+.todo-btn:hover {
+  cursor: pointer;
 }
 
-.todo-btn{
-    height:100%;
-    margin: 0;
-    border:none;
-    width:40px;
-    color:#ececec;
-    transition: background-color 200ms, color 200ms;
+.todo-btn {
+  height: 100%;
+  margin: 0;
+  border: none;
+  width: 40px;
+  color: #ececec;
+  transition: background-color 200ms, color 200ms;
 }
 
-.icon{
-    height:100%;
-    margin:auto;
+.icon {
+  height: 100%;
+  margin: auto;
 }
 
-.complete-btn{
-    background-color:var(--green);
+.complete-btn {
+  background-color: var(--green);
 }
 
-.complete-btn:hover{
-    background-color:#ececec;
-    color:var(--green);
+.complete-btn:hover {
+  background-color: #ececec;
+  color: var(--green);
 }
 
-.incomplete-btn{
-    background-color:var(--purple);
+.incomplete-btn {
+  background-color: var(--purple);
 }
 
-.incomplete-btn:hover{
-    background-color:#ececec;
-    color:var(--purple);
+.incomplete-btn:hover {
+  background-color: #ececec;
+  color: var(--purple);
 }
 
-.trash-btn{
-    background-color:var(--red);
+.trash-btn {
+  background-color: var(--red);
 }
 
-.trash-btn:hover{
-    background-color:#ececec;
-    color:var(--red)
+.trash-btn:hover {
+  background-color: #ececec;
+  color: var(--red);
 }
