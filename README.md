@@ -10,6 +10,8 @@ Navigate to the frontend directory and firstly install the packages using `npm i
 
 This app has a live background playing. There is also a toolbar at the bottom that allows you to open each of the widgets. These widgets are fully draggable and the state of the widgets (not the content) is handled by the UIContext context.
 
+![Web app](https://user-images.githubusercontent.com/75669360/210127376-c4894065-686c-4b82-88b9-e47d1d6c39b6.JPG)
+
 ### Todo List
 
 The first major feature was a todo list. Firstly, there is the ability to add an item. This is done using a button at the bottom which opens a modal from the Antd component library. The user can then name their task and pick a due date using a calendar date selector. Helpful for something like recording the tasks in a busy week.
