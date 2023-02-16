@@ -15,7 +15,7 @@ const WeatherWidget = ({ name }) => {
   const { getDisplayValue } = useContext(UIContext)
   const showWindow = getDisplayValue(name)
   const [url, setUrl] = useState(
-    `http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=${OpenWeatherAPIKey}&&units=metric`
+    `http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=${process.env.REACT_APP_OpenWeatherAPIKey}&&units=metric`
   )
   const { data, isLoading, setRefresh } = UseGet(url, "")
   const [units, setUnits] = useState("metric")
@@ -26,7 +26,7 @@ const WeatherWidget = ({ name }) => {
 
   const configChangeHandler = ({ city, country, units }) => {
     setUrl(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${OpenWeatherAPIKey}&&units=${units}`
+      `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${process.env.REACT_APP_OpenWeatherAPIKey}&&units=${units}`
     )
     setUnits(units)
   }
