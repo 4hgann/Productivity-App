@@ -9,8 +9,6 @@ import { useContext } from "react"
 
 import "../../Styles/WeatherWidget.css"
 
-import OpenWeatherAPIKey from "../../keys/OpenWeather"
-
 const WeatherWidget = ({ name }) => {
   const { getDisplayValue } = useContext(UIContext)
   const showWindow = getDisplayValue(name)
